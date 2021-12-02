@@ -16,13 +16,13 @@ services:
             config:
               name: EXEMPLO-01
               number: 1
-#    plugins:
-#       - name: kong-example
-#         config:
-#           name: SERVICE
-#           number: 2
-#plugins:
-#  - name: kong-example
-#    config:
-#      name: GLOBAL
-#      number: 3
+    plugins:
+       - name: kong-example-02
+         config:
+           name: kong-example-02
+           number: 2
+plugins:
+  - name: kong-example-03
+    config:
+      name: kong-example-03
+      number: 3
