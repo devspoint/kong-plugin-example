@@ -12,17 +12,17 @@ services:
         paths:
           - "/message"
         plugins:
-          - name: kong-example-01
+          - name: kong-example
             config:
-              name: EXEMPLO-01
+              name: ROTA
               number: 1
-#    plugins:
-#       - name: kong-example
-#         config:
-#           name: SERVICE
-#           number: 2
-#plugins:
-#  - name: kong-example
-#    config:
-#      name: GLOBAL
-#      number: 3
+    plugins:
+       - name: kong-example
+         config:
+           name: SERVICE
+           number: 2
+plugins:
+  - name: kong-example
+    config:
+      name: GLOBAL
+      number: 3

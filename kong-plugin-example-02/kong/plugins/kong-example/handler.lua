@@ -9,15 +9,15 @@ function KongExample:new()
 end
 
 function KongExample:init_worker(config)
-  print('KongExample:init_worker\n\n\n\n')
+  --print('KongExample:init_worker\n\n\n\n')
 end
 
 function KongExample:rewrite(config)
-  print('KongExample:rewrite\n\n\n\n')
+  --print('KongExample:rewrite\n\n\n\n')
 end
 
 function KongExample:header_filter(config)
-  print('KongExample:header_filter')
+  --print('KongExample:header_filter')
 end
 
 function KongExample:access(config)
@@ -27,14 +27,14 @@ function KongExample:access(config)
 end
 
 function KongExample:body_filter(config)
-  print('KongExample:body_filter')
-  local chunk, eof = ngx.arg[1], ngx.arg[2]
-  print('chunk=',chunk)
-  print('eof=',eof)
-  print('\n\n\n')
+  --print('KongExample:body_filter')
+  --local chunk, eof = ngx.arg[1], ngx.arg[2]
+  --print('chunk=',chunk)
+  --print('eof=',eof)
+  --print('\n\n\n')
 
 end
 function KongExample:log(config)
-  print('KongExample:log')
+  --print('KongExample:log')
 end
 return KongExample

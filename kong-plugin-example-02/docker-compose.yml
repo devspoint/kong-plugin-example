@@ -15,9 +15,9 @@ services:
     networks:
       - kong-net
     volumes:
-      - ./kong-plugin-example-01/kong-declarative-config.yml:/tmp/kong-declarative-config.yml
-      - ./kong-plugin-example-01/kong/plugins/kong-example-01:/usr/local/lib/luarocks/rocks-5.1/kong-plugin-example-01/1.0.0-0/lua/kong/plugins/kong-example-01
-      - ./kong-plugin-example-01/kong/plugins/kong-example-01:/usr/local/share/lua/5.1/kong/plugins/kong-example-01
+      - ./kong-declarative-config.yml:/tmp/kong-declarative-config.yml
+      - ./kong/plugins/kong-example:/usr/local/lib/luarocks/rocks-5.1/kong-plugin-example/1.0.0-0/lua/kong/plugins/kong-example
+      - ./kong/plugins/kong-example:/usr/local/share/lua/5.1/kong/plugins/kong-example
     environment:
       KONG_DATABASE: "off"
       KONG_DECLARATIVE_CONFIG: /tmp/kong-declarative-config.yml
@@ -26,7 +26,7 @@ services:
       KONG_ADMIN_ACCESS_LOG: /dev/stdout
       KONG_ADMIN_ERROR_LOG: /dev/stderr
       KONG_ADMIN_LISTEN: 0.0.0.0:8001
-      KONG_PLUGINS: bundled, kong-example-01, request-termination
+      KONG_PLUGINS: bundled, kong-example, request-termination
     ports:
       - "8000:8000"
       - "8001:8001"
