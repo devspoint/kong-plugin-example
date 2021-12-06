@@ -1,17 +1,38 @@
 _format_version: "1.1"
 
 services:
-  - name: orders-v1-post
+  - name: service_um
     url: https://run.mocky.io/v3/e002349c-8c93-4022-913b-df9cb6960605
     routes:
-      - name: message
-        tags:
-          - orders
+      - name: mensagem_um
         methods:
           - GET
         paths:
-          - "/message"
+          - "/mensagem_um"
+      - name: mensagem_dois
+        methods:
+          - GET
+        paths:
+          - "/mensagem_dois"
     plugins:
-       - name: kong-example
-         config:
-           name: Marcelo
+      - name: kong-example
+        config:
+          name: service_um
+
+  - name: service_dois
+    url: https://run.mocky.io/v3/e002349c-8c93-4022-913b-df9cb6960605
+    routes:
+      - name: mensagem_tres
+        methods:
+          - GET
+        paths:
+          - "/mensagem_tres"
+      - name: mensagem_quatro
+        methods:
+          - GET
+        paths:
+          - "/mensagem_quatro"
+        plugins:
+          - name: kong-example
+            config:
+              name: service_dois|mensagem_quatro
