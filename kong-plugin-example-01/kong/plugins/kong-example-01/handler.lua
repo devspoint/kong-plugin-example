@@ -13,6 +13,7 @@ function KongExample01:access(config)
   print('KongExample-01:access')
   print('Name ', config.name)
   print('Number ', config.number)
+  print('\n\n\n ')
 end
 
 return KongExample01

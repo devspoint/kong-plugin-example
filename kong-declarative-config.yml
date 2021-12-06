@@ -1,28 +1,25 @@
 _format_version: "1.1"
 
 services:
-  - name: orders-v1-post
+  - name: service_um
     url: https://run.mocky.io/v3/e002349c-8c93-4022-913b-df9cb6960605
     routes:
-      - name: message
-        tags:
-          - orders
+      - name: mensagem_um
         methods:
           - GET
         paths:
-          - "/message"
-        plugins:
-          - name: kong-example-01
-            config:
-              name: EXEMPLO-01
-              number: 1
+          - "/mensagem_um"
+
     plugins:
-       - name: kong-example-02
-         config:
-           name: kong-example-02
-           number: 2
-plugins:
-  - name: kong-example-03
-    config:
-      name: kong-example-03
-      number: 3
+      - name: kong-example-01
+        config:
+          name: kong-example-01
+          number: 1
+      - name: kong-example-02
+        config:
+          name: EXEMPLO-02
+          number: 2
+      - name: kong-example-03
+        config:
+          name: EXEMPLO-03
+          number: 3

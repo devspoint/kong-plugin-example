@@ -1,7 +1,7 @@
 local BasePlugin = require "kong.plugins.base_plugin"
 
 local KongExample02 = BasePlugin:extend()
-KongExample02.PRIORITY = 500
+KongExample02.PRIORITY = 400
 KongExample02.VERSION = "1.0.0"
 
 function KongExample02:new()
@@ -13,6 +13,7 @@ function KongExample02:access(config)
   print('KongExample-02:access')
   print('Name ', config.name)
   print('Number ', config.number)
+  print('\n\n\n ')
 end
 
 return KongExample02
